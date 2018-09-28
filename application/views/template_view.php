@@ -80,6 +80,7 @@
 																			</ul>
 																	</div>
 																	<div class="item"><a href="/">Обо мне</a></div>
+																	<div class="item"><a href="/cv">CV</a></div>
 															</div>
 
 															<div class="phone-menu-bg"></div>
@@ -111,7 +112,7 @@
 															</div>
 
 															<div class="phone-menu">
-																	<div class="item" style="height:40px;"><a href="/blog">Блог</a><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/10897-200.png" title="Categories" id="cats-button"></div>
+																	<div class="item" style="height:40px;"><a href="/blog">Блог</a><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/10897-200.png" title="Categories" id="cats-button" style="height:100%;float:right;cursor:pointer;"></div>
 																	<div class="p-0 item" id="cats">
 																		<ul>
 																				<?php

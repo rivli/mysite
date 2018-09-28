@@ -8,7 +8,7 @@
           <div class="content">
             О том как я создавал CHOIZZE - свой первый сайт. Планы и нововведения.
             В этом сайте нет даже MVC, но на нем я научился AJAX и всяким событиям JS/jQuery.<br>
-            Ссылка: <a href="https://choizze.com" target="_blank">choizze.com</a><br>
+            Ссылка: удалил домен<br>
             GitHub: <a href="https://github.com/zakilvir/choizze" target="_blank">choizze</a><br>
           </div>
         </div>

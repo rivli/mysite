@@ -6,7 +6,7 @@
       <div class="content">
         О том как я создавал и создаю свой блог.<br>
         Ссылка: <a href="/" target="_blank">Ilvir Zakiryanov's blog</a><br>
-        GitHub: <a href="https://github.com/zakilvir/myblog" target="_blank">myblog</a><br>
+        GitHub: <a href="https://github.com/zakilvir/mysite" target="_blank">myblog</a><br>
       </div>
     </div>
 <?php

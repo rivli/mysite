@@ -84,6 +84,11 @@ body {
     color: rgba(0,0,0,.84);
     font-size: 30px;
     line-height: 1.4;
+
+    background-image: url(https://coolbackgrounds.io/images/backgrounds/sea-edge-311c5cd5.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 br.clearfix {
@@ -159,7 +164,7 @@ h4 {
 .image-description {
 	text-align: center;
 	font-size: 17px;
-	color:gray;
+	color:white;
 }
 
 .poster-view-min {
@@ -179,7 +184,7 @@ h4 {
 #header {
   padding: 0;
     margin: 0 auto 10px auto;
-    background: #4b4d50; //#5b6ea0;// #85ab73
+    /* background: #4b4d50; //#5b6ea0;// #85ab73 */
 	position: fixed;
   top: 0;
   left: 0;
@@ -286,20 +291,36 @@ padding: 20px;
   top: 0;
   width:100%;
   height:100%;
-  background-image: url(/images/bg1.jpg);
+  /* background-image: url(/images/bg1.jpg);
   background-size:100% auto;
   background-repeat: no-repeat;
-  background-position: bottom center;
+  background-position: bottom center; */
   padding-top: 60px;
 }
 
-.logo-main-page {
-  width: 100%;
-  text-align: center;
-  font-size: 40px;
-  font-family: Reality-Sunday-light; 
+.main-menu {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    line-height: 1;
 }
 
+.logo-main-page {
+    font-size: 70px;
+    text-transform: uppercase;
+}
+
+.main-buttons {
+    font-variant: normal;
+}
+
+.main-buttons ul li {
+    font-size: 20px;
+    display: inline;
+    text-transform: uppercase;
+    padding-left: 15px;
+}
 
 .cool-div {
     margin-bottom: 5px;
@@ -404,6 +425,7 @@ img.project_image {
 }
 
 .categories {
+  background: inherit !important;
 }
 
 .categories ul {
@@ -412,10 +434,11 @@ img.project_image {
 
 .categories ul li {
     padding: 10px;
+    background: white;
 }
 
 .categories ul li:hover {
-    background: rgb(215, 215, 215);
+    background: inherit;/*rgb(215, 215, 215);*/
 }
 
 .categories ul li.active {
@@ -801,7 +824,7 @@ and (min-width : 1024px) {
 
 	#wrapper {
 		width: 50%;
-  top: 60px;
+  top: 50px;
 	}
 
   #toTop {
@@ -862,7 +885,7 @@ a.menu-button:hover {
     position: fixed;
     top: 50px;
     left: 0;
-    min-width: 40%;
+    min-width: 25%;
     font-size: inherit;
     z-index: 110;
     height: 100%;
@@ -922,14 +945,13 @@ a.menu-button:hover {
 
 .menu-for-desktop li a {
     display: block;
-    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 .menu-for-desktop li a:hover:not(.active) {
-    background-color: #3f5180;
+    background-color: #3f51804f;
 }
 
 .menu-for-desktop .active {
@@ -946,12 +968,12 @@ a.menu-button:hover {
 
 .left-sidebar {
   right: 76%;
-  top:60px;
+  top:50px;
 }
 
 .right-sidebar {
   left: 76%;
-  top:60px;
+  top:50px;
 }
 
 }
