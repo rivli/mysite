@@ -6,17 +6,14 @@
 
 <div id="wrapper">
   <?php if ($data['poster']) { ?>
-  <div class="image-block">
+  <div class="image-block" style="position: absolute;" >
   <div class="desc" style="background: url(<?php echo $data['poster']['url'] ?>);background-position: center center; /* Положение фона */
   background-repeat: no-repeat; background-size: cover;width:<?php echo $data['poster']['width'] ?>%; ">
+  </div>
 
   </div>
-  <div class="image-description">
-    <?php echo $data['poster']['description'] ?>
-  </div>
-  </div>
   <?php } ?>
-  <div id="page">
+  <div id="page" style="padding-top: <?php echo $data['poster']['height-for-poster'] ?>px">
 
     <div id="content">
       <table class="article-nameblock">

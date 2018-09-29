@@ -1,24 +1,33 @@
 <?php
   $left_sb_name = 'article';
   ?>
-<div class="plsaddposter">Добавьте Постер</div>
 
-<div id="wrapper">
-
+<div id="wrapper" style="background-image: linear-gradient(white 50%, white 80%);">
+  <div class="plsaddposter">Добавьте Постер</div>
   <div id="page">
 
     <div id="content">
 
       <form class='addpost' id="articleForm" method="POST" action="/blog/query_addpost" enctype="multipart/form-data">
+
+
+
           <div id="poster-settings">
               <span class="bold-text">Poster settings</span><br>
               <input type="file" id='poster' name="poster"><br>
               <div class="hided" id="hided-settings">
-                Width
-                <input type="range" min="1" max="50" name="poster_width" style="width:98%;" step="1" value="100" id="poster-width"><br>
-                <input type="text"name="poster_description" style="width:98%;" value="" id="poster_description" onchange="changePosterDesc()" placeholder="Описание"><br>
+                Height for poster
+                <input type="range" min="0" max="500" name="height_for_poster" style="width:98%;" step="0.5" value="0" id="height_for_poster" onchange="changeHeightForPoster()"><br>
+                Background Color<br>
+                <div class="colorpicker"></div>
+                <input type="text" name="bg-color" style="width:90%;" value="inherit" id="bg-color" onchange="changeBgColor()" placeholder="Цвет фона"><br>
               </div>
             </div>
+
+
+
+
+
           <input type="text" name="name" id="name" placeholder="Имя" width="100%" maxlength="100" title="Не менее 4 и неболее 20 латынских символов или цифр." required><br>
           <select  name="category" id="category">
             <option disabled selected>Выберите категорию</option>

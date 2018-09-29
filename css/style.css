@@ -120,26 +120,6 @@ h4 {
     color: #547dbd;
 }
 
-.messageshow {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    widht: 100;
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-    z-index: 100000;
-}
-
-.desc {
-	height: 300px;
-	width: 100%;
-	display: inline-block;
-    background-position: center bottom; /* Положение фона */
-    background-repeat: no-repeat; /* Отменяем повторение фона */
-    width: 100% !important;
-    max-width: 100% !important;
-}
 
 .messageshow {
     position: fixed;
@@ -154,13 +134,14 @@ h4 {
 
 .image-block {
 	text-align: center;
+  position: relative;
 	width: 100%;
 }
 
 .image-description {
 	text-align: center;
 	font-size: 17px;
-	color:white;
+	color:black;
 }
 
 .poster-view-min {
@@ -227,15 +208,31 @@ h4 {
 /*menu here*/
 
 #page {
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 50%;
+  margin: 0 auto 0 auto;
 }
 
 #wrapper {
-	width: 50%;
+	width: 100%;
 	position: relative;
-  margin: 100px auto 10px auto;
+  margin: 0px auto 10px auto;
+  top: 100px;
 }
+
+.desc {
+  position: absolute;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 
 .footer {
   background: #000;
@@ -243,6 +240,8 @@ h4 {
   width: 100%;
   color: white;
   padding: 50px;
+  position: relative;
+  top: 100px;
 }
 
 
@@ -520,7 +519,6 @@ display: none;
 
 .plsaddposter {
 	font-size: 30px;
-  margin-top: 60px;
 	text-align: center;
 	font-weight: bold;
     padding: 15px;
@@ -550,7 +548,7 @@ display: none;
 
 #poster-settings {
 	position: fixed;
-    top: 60px;
+    top: 100px;
     right: 10px;
     background: white;
     color: black;
@@ -559,12 +557,22 @@ display: none;
 		width: initial;
 }
 
+.colorpicker {
+  height: 15px;
+  width: 15px;
+  background: white;
+  border: 1px solid #000;
+  vertical-align: middle;
+  display: inline-block;
+}
+
 .image-settings {
 background: white;
 color: black;
 padding: 10px;
 	position: absolute;
 	right: 10px;
+  top:10px;
 	text-align: center;
 	border: 1px solid rgb(223, 223, 223);
 }
@@ -748,8 +756,11 @@ top: 10%;
     width: initial;
 	position: fixed;
 	left: 10px;
-	bottom: 10px;
-
+	top: 110px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 1000;
 }
 
 .form-buttons-container-right {

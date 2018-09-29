@@ -9,7 +9,9 @@ function openWindow(name, url) {
         success: funcSuccess
       });
 
-
+function closeWindow() {
+    $(".windowBlock").remove();
+}
 
 
   function funcBefore() {

@@ -78,6 +78,10 @@
 		<div class="footer">
 			some data
 		</div>
-
+<script type="text/javascript">
+function closeWindow() {
+	$(".windowBlock").remove();
+}
+</script>
 	</body>
 </html>

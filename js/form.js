@@ -24,9 +24,18 @@ function addPost(draft) {//It's main function
 }
 
 
-function changePosterDesc() {//Poster description changer
-    $(".image-description").html($("#poster_description").val());
+function changeHeightForPoster() {//Poster description changer
+    $("#page").css("padding-top", $("#height_for_poster").val() + "px");
   }
+
+function changeBgColor() {//Poster bg changer
+  $(".colorpicker").css("background", " #"+ $("#bg-color").val());
+  $("#wrapper").css("background-image", "linear-gradient( #" + $("#bg-color").val() + " 50%, white 80%)");
+  }
+
+function changeWidthOfDesc() {
+    $(".desc").css("width", $("#poster-width").val() + "%");
+}
 
 function readURL(input) {// take url for image from form and set it to the poster place
   if (input.files && input.files[0]) {
@@ -37,7 +46,7 @@ function readURL(input) {// take url for image from form and set it to the poste
         $("#image").remove();
         $('.plsaddposter').remove();
         $('.poster-description-block').remove();
-         $("#wrapper").before('<div class="image-block"><div class="desc" id="image" style="background: url('+e.target.result+');background-position: center center; background-repeat: no-repeat; background-size: cover;max-width:50%; "></div><div class="poster-description-block image-description"></div></div>');
+         $("#wrapper").prepend('<div class="image-block" style="position: absolute;" ><div class="desc" id="image" style="background: url('+e.target.result+');background-position: center center; background-repeat: no-repeat; background-size: cover;max-width:50%;"></div></div>');
       };
 
       reader.readAsDataURL(input.files[0]);
@@ -95,12 +104,12 @@ $("#add-image").click(function () {
                 $(".main-input").empty();
             }
 
-            $("#article").append('<div class="image-block" id="image-'+imagesNumber+'-block"><div class="image-place"  contenteditable="false" id="image-'+imagesNumber+'"></div><div class="image-description" contenteditable="false" id="image-'+imagesNumber+'-description"></div></div><br>');
+            $("#article").append('<div class="image-block" id="image-'+imagesNumber+'-block"><div class="image-place"  contenteditable="false" id="image-'+imagesNumber+'"></div><div class="image-description" contenteditable="false" id="image-'+imagesNumber+'-description" ></div></div><br>');
 
 
 
           var position = $("#image-"+imagesNumber).position().top + 10;
-            $("#articleForm").append('<div class="image-settings" id="image-'+imagesNumber+'-settings" style="top:'+position+'px;">'+
+            $("#image-" + imagesNumber + "-block").append('<div class="image-settings" id="image-'+imagesNumber+'-settings">'+
                             '<span class="bold-text">Image settings</span><br>'+
                             '<input type="file" id="file-image-'+imagesNumber+'" onchange="imageURL(this,'+imagesNumber+')" name="file-image-'+imagesNumber+'"><br>'+
                             '<input type="text" name="image-'+imagesNumber+'-description"  id="image-'+imagesNumber+'-description-input" onchange="changeDesc('+imagesNumber+')" placeholder="Описание"><br>'+

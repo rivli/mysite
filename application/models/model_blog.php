@@ -81,7 +81,7 @@ class Model_Blog extends Model
 		mysqli_query($ADDITIONALBD, $sql);
 
 		//==================Создаем таблицу images
-		$sql = "CREATE TABLE `".$article['id']."-Images` ( `id` INT NOT NULL AUTO_INCREMENT ,`status` VARCHAR(300) NOT NULL ,`url` TEXT NOT NULL ,`description` TEXT NOT NULL , `width` INT(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+		$sql = "CREATE TABLE `".$article['id']."-Images` ( `id` INT NOT NULL AUTO_INCREMENT ,`status` VARCHAR(300) NOT NULL ,`url` TEXT NOT NULL ,`description` TEXT NOT NULL , `height-for-poster` INT(255) NOT NULL , `bg-color` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
 		mysqli_query($ADDITIONALBD, $sql);
 
 
@@ -108,7 +108,7 @@ class Model_Blog extends Model
 		                move_uploaded_file($_FILES["poster"]["tmp_name"], "images/articles/".$article['id']."/".$_FILES["poster"]["name"]);
 		                $path_file = "https://ilvirzakiryanov.com/images/articles/".$article['id']."/".$_FILES["poster"]["name"];
 		              	mysqli_query($MAINBD , "UPDATE `articles` SET `poster` = '".$path_file."' WHERE `id` = '".$article['id']."'") or die("Error on 101 line");
-									mysqli_query($ADDITIONALBD , "INSERT INTO `".$article['id']."-Images`  VALUES ('', 'poster', '".$path_file."', '".$_POST['poster_description']."', '".$_POST['poster_width']."')") or die("Error on 102 line");
+									mysqli_query($ADDITIONALBD , "INSERT INTO `".$article['id']."-Images`  VALUES ('', 'poster', '".$path_file."', 'POSTER', '".$_POST['height_for_poster']."', '".$_POST['bg-color']."')") or die("Error on 102 line");
 
 								};
 		        };
@@ -140,7 +140,7 @@ if ($_POST['imagesNumber'] != 0) {
 								move_uploaded_file($_FILES['file-image-'.$i]["tmp_name"], "images/articles/".$article['id']."/".$_FILES['file-image-'.$i]["name"]);
 								$path_file = "https://ilvirzakiryanov.com/images/articles/".$article['id']."/".$_FILES['file-image-'.$i]["name"];
 
-							mysqli_query($ADDITIONALBD , "INSERT INTO `".$article['id']."-Images`  VALUES ('', 'image', '".$path_file."', '".$_POST['image-'.$i.'-description']."', '100')") or die("Error on 135 line");
+							mysqli_query($ADDITIONALBD , "INSERT INTO `".$article['id']."-Images`  VALUES ('', 'image', '".$path_file."', '".$_POST['image-'.$i.'-description']."', '100', '0', '0')") or die("Error on 135 line");
 
 							//$_POST['description'] = str_replace("\$IMG".$i, '<div class="image-block" id="image-'.$i.'-block"><div class="image-place" style="background: url('.$path_file.');background-position: center center; background-repeat: no-repeat; background-size: cover; " id="image-'.$i.'"></div><div class="image-description" id="image-'.$i.'-description">'.$_POST['image-'.$i.'-description'].'</div></div><br>', $_POST['description']);
 
