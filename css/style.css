@@ -85,10 +85,6 @@ body {
     font-size: 30px;
     line-height: 1.4;
 
-    background-image: url(https://coolbackgrounds.io/images/backgrounds/sea-edge-311c5cd5.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 br.clearfix {
@@ -181,97 +177,52 @@ h4 {
     width: 100%;
 }
 
-#header {
+#navigation {
   padding: 0;
-    margin: 0 auto 10px auto;
-    /* background: #4b4d50; //#5b6ea0;// #85ab73 */
+  margin: 0 auto 10px auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: #000;/*#4b4d50; //#5b6ea0;// #85ab73 */
 	position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
 	width: 100%;
-  height: 110px;
+  line-height: 50px
 }
 
-#floating-header {
-	height: 40px;
-	position: fixed;
-	background:white;
-	z-index:100;
-	top:0;
-	left:0;
-	display: none;
-	border-bottom: solid 1px #a2a2a2;
-	width: 100%;
+#navigation .logo a {
+  font-weight: bold;
+  font-size: 24px;
+  color: white !important;
 }
 
-#logo {
-  margin-left: 8%;
-  font-family: Reality-Sunday-light;
-  font-size: 20px !important;
-  text-decoration: none;
+#navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-.menu-for-desktops {
-  display: none;
+#navigation li {
+    float: left;
 }
 
-.menu-for-phones {
-  display: block;
+#navigation li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
 }
 
-.menu-for-phones table,tr,td {
-  vertical-align: middle;
-  border-spacing: 0;
-  border-collapse: collapse;
+#navigation li a:hover {
+    color: #dd3f3f;
 }
 
-.menu-for-phones td {
-padding: 20px;
-}
-
-#open-menu {
-      height: 50px;
-      margin: 0 0 0 40px;
-      display: inline;
-}
-
-.menu-name {
-  color: white;
-  font-size: 50px;
-  display: inline;
-  margin: 0 8px 0 40px;
-}
-
-.phone-menu {
-  display: none;
-    background: white;
-    position: fixed;
-    top: 110px;
-    left: 0;
-    min-width: 60%;
-    font-size: 50px;
-    z-index: 110;
-    height: 100%;
-}
-
-.phone-menu .item {
-  padding: 10px;
-}
-
-.phone-menu .inner-item {
-  padding: 10px;
-    background: rgb(179, 204, 241);
-}
-
-.phone-menu-bg {
-  display: none;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: 100;
-    background: #00000087;
-    cursor: pointer;
+#navigation .active {
+    background-color: #4CAF50;
 }
 /*menu here*/
 
@@ -281,9 +232,17 @@ padding: 20px;
 }
 
 #wrapper {
-	width: 100%;
+	width: 50%;
 	position: relative;
-	margin: 0 auto 0 auto;
+  margin: 100px auto 10px auto;
+}
+
+.footer {
+  background: #000;
+  font-size: 20px;
+  width: 100%;
+  color: white;
+  padding: 50px;
 }
 
 
@@ -821,12 +780,6 @@ and (min-width : 1024px) {
     font-size: inherit;
   }
 
-
-	#wrapper {
-		width: 50%;
-  top: 50px;
-	}
-
   #toTop {
   position:fixed;
   bottom:20px; /* отступ кнопки от нижнего края страницы*/
@@ -839,124 +792,6 @@ and (min-width : 1024px) {
     width: 40px;
   }
 
-	#header {
-    height: auto;
-    position: fixed;
-	}
-
-  #open-menu {
-      height: 20px;
-      margin: 15px 10px 0 40px;
-      display: inline;
-      cursor: pointer;
-  }
-
-  .menu-for-desktops {
-    display: block;
-  }
-
-  .menu-for-phones {
-    display: none;
-  }
-
-  .menu-buttons {
-    display: none;
-    position: fixed;
-    top: 60px;
-    right: 92%;
-  }
-
-  a.menu-button {
-    background: #5b6ea0;
-    color: white !important;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: block;
-    font-size: 30px;
-}
-
-a.menu-button:hover {
-    background: #6f86c1;
-}
-
-.phone-menu {
-  display: none;
-    background: white;
-    position: fixed;
-    top: 50px;
-    left: 0;
-    min-width: 25%;
-    font-size: inherit;
-    z-index: 110;
-    height: 100%;
-}
-
-  #menu {
-  	line-height: 40px;
-  	/*position: absolute;
-  	left: 40px;*/
-  	height: 57px;
-  	font-family: "Open Sans", sans-serif;
-  }
-
-  #menu a {
-  	text-decoration: none;
-  	color: white;
-  	font-size: 0.95em;
-  }
-
-  #menu a:hover {
-  	text-decoration: underline;
-  }
-
-  #menu ul {
-  	padding: 0 20px 0 20px;
-  	list-style: none;
-  }
-
-  #menu ul li {
-  	display: inline;
-  	margin: 0 8px 0 8px;
-  }
-
-  li .first{
-  margin-left: 0;
-  }
-
-	.desc {
-	height: 300px;
-    max-width: 100% !important;
-}
-
-.menu-for-desktop .logo {
-  font-weight: bold;
-}
-
-.menu-for-desktop ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.menu-for-desktop li {
-    float: left;
-}
-
-.menu-for-desktop li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.menu-for-desktop li a:hover:not(.active) {
-    background-color: #3f51804f;
-}
-
-.menu-for-desktop .active {
-    background-color: #4CAF50;
-}
 
 
 /*sidebars*/
@@ -968,12 +803,12 @@ a.menu-button:hover {
 
 .left-sidebar {
   right: 76%;
-  top:50px;
+  top:100px;
 }
 
 .right-sidebar {
   left: 76%;
-  top:50px;
+  top:100px;
 }
 
 }

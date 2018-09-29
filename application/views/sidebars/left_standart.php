@@ -1,10 +1,3 @@
-<div class="menu-buttons">
-
-      <a class="menu-button" href="/" title="Портфолио">П</a>
-      <a class="menu-button" href="/blog" title="Блог">Б</a>
-
-</div>
-
 <div class="left-sidebar sb">
 
   <form class="" action="/search" name="searchingForm" method="post">
