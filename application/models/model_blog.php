@@ -86,7 +86,7 @@ class Model_Blog extends Model
 
 
 		//------------------Добавляем постер опроса
-		if (!file_exists("images/articles/".$article['id'])) {mkdir("images/articles/".$article['id'],0777);} else echo "images/articles/".$article['id']."already exist";
+		if (!file_exists("images/articles/".$article['id'])) {mkdir("images/articles/".$article['id'],0777);};
 
 		    $errorSubmit = false; // контейнер для ошибок
 		        if(isset($_FILES['poster']) && $_FILES['poster'] !=""){ // передали ли нам вообще файл или нет
@@ -114,14 +114,21 @@ class Model_Blog extends Model
 		        };
 //Добавляем остальные изображения, если они есть
 
-
+$erorrs_searching = array();
 if ($_POST['imagesNumber'] != 0) {
 	$i = 1;
-
+$erorrs_searching['120 line'] = 'okay';
+$erorrs_searching['images Number'] = $_POST['imagesNumber'];
+$erorrs_searching['120 line'] = $_FILES;
 	while ($i <= $_POST['imagesNumber']) {
 
+		$erorrs_searching['124 line'] = 'okay';
 		$errorSubmit = false; // контейнер для ошибок
 				if(isset($_FILES['file-image-'.$i]) && $_FILES['file-image-'.$i] !=""){ // передали ли нам вообще файл или нет
+
+
+						$erorrs_searching['127 line'] = 'okay';
+
 						$whitelist = array(".gif", ".jpeg", ".png", ".jpg", ".bmp"); // список расширений, доступных для нашей аватарки
 						// проверяем расширение файла
 						//===>>>
@@ -129,19 +136,31 @@ if ($_POST['imagesNumber'] != 0) {
 						foreach  ($whitelist as  $item) {
 								if(preg_match("/$item\$/i",$_FILES['file-image-'.$i]['name'])) $error = false;
 						}
+
+
+					$erorrs_searching['137 line'] = 'okay';
+
 						//<<<===
 						if($error){
 								// если формат не корректный, заполняем контейнер для ошибок
 								$errorSubmit = 'Не верный формат картинки!';
+
+
+							$erorrs_searching['145 line'] = 'okay';
+
 						}else{
 								// если формат корректный, то сохраняем файл
 								// и все остальную информацию о пользователе
 								// Файл сохранится в папку /files/
+							$erorrs_searching['152 line'] = 'okay';
 								move_uploaded_file($_FILES['file-image-'.$i]["tmp_name"], "images/articles/".$article['id']."/".$_FILES['file-image-'.$i]["name"]);
+
+							$erorrs_searching['154 line'] = 'okay';
 								$path_file = "https://ilvirzakiryanov.com/images/articles/".$article['id']."/".$_FILES['file-image-'.$i]["name"];
 
-							mysqli_query($ADDITIONALBD , "INSERT INTO `".$article['id']."-Images`  VALUES ('', 'image', '".$path_file."', '".$_POST['image-'.$i.'-description']."', '100', '0', '0')") or die("Error on 135 line");
+							mysqli_query($ADDITIONALBD , "INSERT INTO `".$article['id']."-Images`  VALUES ('', 'image', '".$path_file."', '".$_POST['image-'.$i.'-description']."', '0', '0')") or die("Error on 135 line");
 
+						$erorrs_searching['159 line'] = 'okay';
 							//$_POST['description'] = str_replace("\$IMG".$i, '<div class="image-block" id="image-'.$i.'-block"><div class="image-place" style="background: url('.$path_file.');background-position: center center; background-repeat: no-repeat; background-size: cover; " id="image-'.$i.'"></div><div class="image-description" id="image-'.$i.'-description">'.$_POST['image-'.$i.'-description'].'</div></div><br>', $_POST['description']);
 
 
@@ -154,9 +173,11 @@ if ($_POST['imagesNumber'] != 0) {
 	}
 
 
+	$erorrs_searching['172 line'] = 'okay';
 
 	mysqli_query($MAINBD , "UPDATE `articles` SET `description` = '".$article['description']."' WHERE `id` = '".$article['id']."'") or die("Error on 149 line");
 
+	$erorrs_searching['177 line'] = 'okay';
 	}
 
 	header('location: /blog/article/'.$article['id']);

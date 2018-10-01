@@ -104,13 +104,13 @@ $("#add-image").click(function () {
                 $(".main-input").empty();
             }
 
-            $("#article").append('<div class="image-block" id="image-'+imagesNumber+'-block"><div class="image-place"  contenteditable="false" id="image-'+imagesNumber+'"></div><div class="image-description" contenteditable="false" id="image-'+imagesNumber+'-description" ></div></div><br>');
+            $("#article").append('<div class="image-block" id="image-'+imagesNumber+'-block"><div class="image-place"  contenteditable="false" id="image-'+imagesNumber+'"></div><div class="image-description" contenteditable="false" id="image-'+imagesNumber+'-description"></div></div><br>');
 
 
 
-          var position = $("#image-"+imagesNumber).position().top + 10;
-            $("#image-" + imagesNumber + "-block").append('<div class="image-settings" id="image-'+imagesNumber+'-settings">'+
-                            '<span class="bold-text">Image settings</span><br>'+
+          var position = $("#image-"+imagesNumber+"-block").position().top + 10;
+            $("#articleForm").append('<div class="image-settings" id="image-'+imagesNumber+'-settings" style="top:'+position+'px;">'+
+                            '<span class="bold-text">Image '+imagesNumber+' settings</span><br>'+
                             '<input type="file" id="file-image-'+imagesNumber+'" onchange="imageURL(this,'+imagesNumber+')" name="file-image-'+imagesNumber+'"><br>'+
                             '<input type="text" name="image-'+imagesNumber+'-description"  id="image-'+imagesNumber+'-description-input" onchange="changeDesc('+imagesNumber+')" placeholder="Описание"><br>'+
                             '<input type="button" name="delete" class="form-button" style="background:rgb(35, 130, 20);border-color:rgb(35, 130, 20);" value="Delete" onclick="removeImage('+imagesNumber+')">'+

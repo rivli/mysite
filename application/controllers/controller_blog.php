@@ -41,7 +41,7 @@ class Controller_Blog extends Controller
 	{
 		OnlyForAdmin();
 		$data = $this->model->add_query_post($_POST);
-		$this->view->generate(array('content' => 'articleadded_view.php','title' => 'Добавить статью'), 'template_view.php', $data);
+		$this->view->generate(array('content' => 'articleadded_view.php','title' => 'Добавить статью'), 'cleartemplate_view.php', $data);
 	}
 
 	function action_signin()

@@ -4,7 +4,7 @@
   $right_sb_name = 'article';
  ?>
 
-<div id="wrapper">
+<div id="wrapper"  style="background-image: linear-gradient(#<?php echo $data['poster']['bg-color'] ?> 30%, white 50%);">
   <?php if ($data['poster']) { ?>
   <div class="image-block" style="position: absolute;" >
   <div class="desc" style="background: url(<?php echo $data['poster']['url'] ?>);background-position: center center; /* Положение фона */

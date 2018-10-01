@@ -9,6 +9,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="shortcut icon" href="/favicon.ico?v=2">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+
 
 	<script src="/js/additional.js" type="text/javascript"></script>
 
